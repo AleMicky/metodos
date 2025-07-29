@@ -44,20 +44,30 @@
       width: 320px;
       transition: transform 0.3s, box-shadow 0.3s;
       animation: slideUp 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .card:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
     .criterio {
       font-weight: 600;
       color: #264653;
       margin-bottom: 10px;
+      text-align: center;
     }
     .tipo {
       margin-top: 10px;
       padding-top: 10px;
       border-top: 1px solid #eee;
+      font-size: 0.9rem;
     }
     .tipo span {
       font-weight: bold;
@@ -98,7 +108,7 @@
   </div>
 
   <footer>
-    Presentación estilo mapa conceptual con animaciones — ChatGPT
+    Presentación estilo mapa conceptual con imágenes y animaciones — ChatGPT
   </footer>
 
   <script>
@@ -106,52 +116,62 @@
       {
         criterio: "Definición",
         cientifico: "Proceso sistemático que usa la observación, formulación de hipótesis, experimentación y análisis.",
-        empirico: "Conocimiento basado en la experiencia directa, observación sin sistematización rigurosa."
+        empirico: "Conocimiento basado en la experiencia directa, observación sin sistematización rigurosa.",
+        img: "https://cdn-icons-png.flaticon.com/512/2920/2920066.png"
       },
       {
         criterio: "Etapas",
         cientifico: "1. Observación\n2. Planteamiento del problema\n3. Hipótesis\n4. Experimentación\n5. Análisis\n6. Conclusiones",
-        empirico: "1. Observación directa\n2. Registro de experiencias\n3. Inferencias simples"
+        empirico: "1. Observación directa\n2. Registro de experiencias\n3. Inferencias simples",
+        img: "https://cdn-icons-png.flaticon.com/512/2357/2357769.png"
       },
       {
         criterio: "Ejemplo en entrevistas",
         cientifico: "Analizar el estrés laboral con entrevistas estructuradas y análisis de correlación.",
-        empirico: "Entrevistas informales donde se concluye que el jefe genera estrés basándose en experiencias."
+        empirico: "Entrevistas informales donde se concluye que el jefe genera estrés basándose en experiencias.",
+        img: "https://cdn-icons-png.flaticon.com/512/3208/3208713.png"
       },
       {
         criterio: "Objetivo",
         cientifico: "Explicar y predecir fenómenos mediante evidencia verificable.",
-        empirico: "Obtener conocimiento inmediato basado en la experiencia."
+        empirico: "Obtener conocimiento inmediato basado en la experiencia.",
+        img: "https://cdn-icons-png.flaticon.com/512/3798/3798393.png"
       },
       {
         criterio: "Aplicación",
         cientifico: "Investigación académica, psicológica, sociológica, etc.",
-        empirico: "Reportajes, entrevistas informales, estudios anecdóticos."
+        empirico: "Reportajes, entrevistas informales, estudios anecdóticos.",
+        img: "https://cdn-icons-png.flaticon.com/512/1907/1907719.png"
       },
       {
         criterio: "Instrumentación",
         cientifico: "Cuestionarios validados, entrevistas estructuradas o semiestructuradas.",
-        empirico: "Preguntas abiertas sin protocolo fijo."
+        empirico: "Preguntas abiertas sin protocolo fijo.",
+        img: "https://cdn-icons-png.flaticon.com/512/876/876769.png"
       },
       {
         criterio: "Rigor científico",
         cientifico: "Alto. Validación, replicabilidad y revisión por pares.",
-        empirico: "Bajo. Depende de interpretación subjetiva."
+        empirico: "Bajo. Depende de interpretación subjetiva.",
+        img: "https://cdn-icons-png.flaticon.com/512/3079/3079049.png"
       },
       {
         criterio: "Ventajas",
         cientifico: "Resultados confiables, explicaciones profundas, posibilidad de generalización.",
-        empirico: "Rápido, accesible, útil para exploración."
+        empirico: "Rápido, accesible, útil para exploración.",
+        img: "https://cdn-icons-png.flaticon.com/512/747/747545.png"
       },
       {
         criterio: "Limitaciones",
         cientifico: "Requiere tiempo, recursos y formación.",
-        empirico: "Subjetivo, propenso a sesgos."
+        empirico: "Subjetivo, propenso a sesgos.",
+        img: "https://cdn-icons-png.flaticon.com/512/1828/1828665.png"
       },
       {
         criterio: "Tipo de entrevista",
         cientifico: "Estructurada o semiestructurada con análisis posterior.",
-        empirico: "Libre, informal, sin guías previas."
+        empirico: "Libre, informal, sin guías previas.",
+        img: "https://cdn-icons-png.flaticon.com/512/3306/3306735.png"
       }
     ];
 
@@ -163,6 +183,7 @@
       card.style.animationDelay = `${index * 0.1}s`;
 
       card.innerHTML = `
+        <img src="${dato.img}" alt="${dato.criterio}">
         <div class="criterio">${dato.criterio}</div>
         <div class="tipo"><span>Método Científico:</span> ${dato.cientifico}</div>
         <div class="tipo"><span>Método Empírico:</span> ${dato.empirico}</div>
