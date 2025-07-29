@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparación de Métodos - Entrevistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #2a9d8f, #21867a);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      animation: zoomIn 1s ease;
+    }
+    .concept-map {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      width: 320px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 1s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    .criterio {
+      font-weight: 600;
+      color: #264653;
+      margin-bottom: 10px;
+    }
+    .tipo {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .tipo span {
+      font-weight: bold;
+      color: #2a9d8f;
+    }
+    footer {
+      background-color: #2a9d8f;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Comparación: Método Científico vs Método Empírico (Entrevistas)</h1>
+  </header>
+
+  <div class="concept-map" id="mapa-conceptual">
+    <!-- Tarjetas generadas por JavaScript -->
+  </div>
+
+  <footer>
+    Presentación estilo mapa conceptual con animaciones — ChatGPT
+  </footer>
+
+  <script>
+    const datos = [
+      {
+        criterio: "Definición",
+        cientifico: "Proceso sistemático que usa la observación, formulación de hipótesis, experimentación y análisis.",
+        empirico: "Conocimiento basado en la experiencia directa, observación sin sistematización rigurosa."
+      },
+      {
+        criterio: "Etapas",
+        cientifico: "1. Observación\n2. Planteamiento del problema\n3. Hipótesis\n4. Experimentación\n5. Análisis\n6. Conclusiones",
+        empirico: "1. Observación directa\n2. Registro de experiencias\n3. Inferencias simples"
+      },
+      {
+        criterio: "Ejemplo en entrevistas",
+        cientifico: "Analizar el estrés laboral con entrevistas estructuradas y análisis de correlación.",
+        empirico: "Entrevistas informales donde se concluye que el jefe genera estrés basándose en experiencias."
+      },
+      {
+        criterio: "Objetivo",
+        cientifico: "Explicar y predecir fenómenos mediante evidencia verificable.",
+        empirico: "Obtener conocimiento inmediato basado en la experiencia."
+      },
+      {
+        criterio: "Aplicación",
+        cientifico: "Investigación académica, psicológica, sociológica, etc.",
+        empirico: "Reportajes, entrevistas informales, estudios anecdóticos."
+      },
+      {
+        criterio: "Instrumentación",
+        cientifico: "Cuestionarios validados, entrevistas estructuradas o semiestructuradas.",
+        empirico: "Preguntas abiertas sin protocolo fijo."
+      },
+      {
+        criterio: "Rigor científico",
+        cientifico: "Alto. Validación, replicabilidad y revisión por pares.",
+        empirico: "Bajo. Depende de interpretación subjetiva."
+      },
+      {
+        criterio: "Ventajas",
+        cientifico: "Resultados confiables, explicaciones profundas, posibilidad de generalización.",
+        empirico: "Rápido, accesible, útil para exploración."
+      },
+      {
+        criterio: "Limitaciones",
+        cientifico: "Requiere tiempo, recursos y formación.",
+        empirico: "Subjetivo, propenso a sesgos."
+      },
+      {
+        criterio: "Tipo de entrevista",
+        cientifico: "Estructurada o semiestructurada con análisis posterior.",
+        empirico: "Libre, informal, sin guías previas."
+      }
+    ];
+
+    const contenedor = document.getElementById("mapa-conceptual");
+
+    datos.forEach((dato, index) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.animationDelay = `${index * 0.1}s`;
+
+      card.innerHTML = `
+        <div class="criterio">${dato.criterio}</div>
+        <div class="tipo"><span>Método Científico:</span> ${dato.cientifico}</div>
+        <div class="tipo"><span>Método Empírico:</span> ${dato.empirico}</div>
+      `;
+
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>
